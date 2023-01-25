@@ -10,9 +10,9 @@ from pathlib import Path
 TEST_FILE_REGEX = re.compile(
     r"(tests\.py$)|(test_.*?\.py$)|(.*_test.py)|(tests/__init__\.py)"
 )
-TEST_CLASS_REGEX = re.compile(r"class (\w+)[:(]")
-TEST_CLASS_METHOD_REGEX = re.compile(r"^\s{4}def (test\w*)[(]")
-TEST_FUNCTION_REGEX = re.compile(r"^def (test\w*)[(]")
+TEST_CLASS_REGEX = re.compile(r"class\s+(\w+)[:(]")
+TEST_CLASS_METHOD_REGEX = re.compile(r"^\s+def\s+(test\w*)\(")
+TEST_FUNCTION_REGEX = re.compile(r"^def\s+(test\w*)\(")
 
 
 def find_test_files(directory: str) -> list[Path]:
